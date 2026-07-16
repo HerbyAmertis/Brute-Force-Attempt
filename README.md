@@ -167,7 +167,9 @@ After clicking **"Scheduled query rule"**, you’ll see the **Analytics rule det
      - **🎯 Initial Access**
      - **🔑 Credential Access**
       
-![Screenshot 2025-01-14 103734](https://github.com/user-attachments/assets/f6558c4d-585b-4e63-b787-1cc071cc0ad0)
+<img width="975" height="675" alt="image" src="https://github.com/user-attachments/assets/f3b54658-1601-42bd-b7b5-f4ebd4e204ad" />
+
+
 
 5. **Rule type**:  
    - Select **Scheduled 🕒**.
@@ -192,6 +194,11 @@ DeviceLogonEvents
 ```
 ![Screenshot 2025-01-14 111832](https://github.com/user-attachments/assets/b1164c0f-6022-444e-a409-43c1d4e9a579)
 
+
+
+
+
+
 - 🛠️ This query filters **sign-in logs** for failed login attempts and identifies unusual patterns.  
 - 💡 Adjust thresholds based on your environment (e.g., `> 5 failed attempts`).
 
@@ -210,6 +217,7 @@ DeviceLogonEvents
      - Blocking an IP 🚫.  
      - Sending an email to your security team 📧.  
      - Triggering a Teams or Slack notification 💬.  
+<img width="1431" height="694" alt="Mitre3" src="https://github.com/user-attachments/assets/a2d9c7b0-f0ce-4ad2-9e22-8eefb2452947" />
 
 2. Example Playbook: A Logic App that sends an **email notification 📤** to the SOC.
 
@@ -217,7 +225,9 @@ DeviceLogonEvents
 
 ### **Step 5: Review and Enable**  
 1. **Review everything** to ensure it’s correct:
-   - Name 🔖, description 📝, KQL query 📊, frequency ⏱️, and action settings ⚙️.  
+   - Name 🔖, description 📝, KQL query 📊, frequency ⏱️, and action settings ⚙️.
+  
+<img width="667" height="792" alt="Capture123" src="https://github.com/user-attachments/assets/70e4cbfb-31d6-455f-bf88-672d5cb4995d" />
 
 2. Click **"Create"** to enable the rule 🎉.  
 
