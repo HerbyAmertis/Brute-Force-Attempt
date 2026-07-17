@@ -244,7 +244,7 @@ DeviceLogonEvents
 - **Attack Status:** Brute force attempts **unsuccessful**.  
 - **Recommendations:** Lockdown NSG rules for all VMs and enforce MFA on privileged accounts.
 
-<img width="533" height="641" alt="Capture1234" src="https://github.com/user-attachments/assets/8c4b5af4-f5cf-40f3-baa3-b2ff5f64a4f5" />
+<img width="520" height="666" alt="image" src="https://github.com/user-attachments/assets/949cac89-3ce1-4f37-aa13-ef8c88192921" />
 <img width="550" height="481" alt="Capture12345" src="https://github.com/user-attachments/assets/7ec7261a-b40a-4cdc-8d90-c33dff2ad365" />
 
 
