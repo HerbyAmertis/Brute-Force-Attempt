@@ -66,6 +66,7 @@ DeviceProcessEvents
 DeviceLogonEvents
 | where TimeGenerated >= ago(5h)
 | where ActionType == "LogonFailed"
+| where isnotempty(RemoteIP)
 | summarize NumberOfFailures = count() by RemoteIP, ActionType, DeviceName
 | where NumberOfFailures >= 10
 ```
@@ -84,12 +85,13 @@ DeviceLogonEvents
   | `80.183.28.114`    | 33                 | `windows-target-`    |
 
 
-![Screenshot 2025-01-06 181511](https://github.com/user-attachments/assets/3134d542-b44d-4036-b2ce-1827bc7dda88)
+<img width="1261" height="746" alt="brute5" src="https://github.com/user-attachments/assets/f1d8fff1-8920-4544-a198-78079e86cc00" />
+
 
 - KQL Query to detect failed logins:  
   ```kql
   DeviceLogonEvents
-  | where RemoteIP in ("87.120.127.241", "194.0.234.44", "10.0.0.8" )
+  | where RemoteIP in ("89.18.136.94", "109.235.255.10", "223.112.111.2", "80.183.28.114")
   | where ActionType != "LogonFailed"
   ```
 
@@ -171,7 +173,8 @@ After clicking **"Scheduled query rule"**, you’ll see the **Analytics rule det
      - **🎯 Initial Access**
      - **🔑 Credential Access**
       
-<img width="975" height="675" alt="image" src="https://github.com/user-attachments/assets/f3b54658-1601-42bd-b7b5-f4ebd4e204ad" />
+<img width="957" height="586" alt="brute1" src="https://github.com/user-attachments/assets/4129abc4-c6a4-4415-b124-d99ab00f73f2" />
+
 
 
 
@@ -193,10 +196,12 @@ In the **Set rule query** step, paste your KQL query to detect brute-force attem
 DeviceLogonEvents
 | where TimeGenerated >= ago(5h)
 | where ActionType == "LogonFailed"
+| where isnotempty(RemoteIP)
 | summarize NumberOfFailures = count() by RemoteIP, ActionType, DeviceName
-| where NumberOfFailures >= 10s
+| where NumberOfFailures >= 10
 ```
-![Screenshot 2025-01-14 111832](https://github.com/user-attachments/assets/b1164c0f-6022-444e-a409-43c1d4e9a579)
+<img width="623" height="639" alt="brute2" src="https://github.com/user-attachments/assets/91975601-0a7a-44de-a709-75cac2c21c17" />
+
 
 
 
@@ -221,7 +226,8 @@ DeviceLogonEvents
      - Blocking an IP 🚫.  
      - Sending an email to your security team 📧.  
      - Triggering a Teams or Slack notification 💬.  
-<img width="1431" height="694" alt="Mitre3" src="https://github.com/user-attachments/assets/a2d9c7b0-f0ce-4ad2-9e22-8eefb2452947" />
+<img width="1078" height="680" alt="brute3" src="https://github.com/user-attachments/assets/98b8f39f-3442-4340-9456-cd44b9fe05c4" />
+
 
 2. Example Playbook: A Logic App that sends an **email notification 📤** to the SOC.
 
@@ -231,7 +237,8 @@ DeviceLogonEvents
 1. **Review everything** to ensure it’s correct:
    - Name 🔖, description 📝, KQL query 📊, frequency ⏱️, and action settings ⚙️.
   
-<img width="667" height="792" alt="Capture123" src="https://github.com/user-attachments/assets/70e4cbfb-31d6-455f-bf88-672d5cb4995d" />
+<img width="667" height="817" alt="brute4" src="https://github.com/user-attachments/assets/df1090e2-6b9c-4c17-ac47-e1c7f28823e0" />
+
 
 2. Click **"Create"** to enable the rule 🎉.  
 
@@ -248,8 +255,9 @@ DeviceLogonEvents
 - **Attack Status:** Brute force attempts **unsuccessful**.  
 - **Recommendations:** Lockdown NSG rules for all VMs and enforce MFA on privileged accounts.
 
-<img width="520" height="666" alt="image" src="https://github.com/user-attachments/assets/949cac89-3ce1-4f37-aa13-ef8c88192921" />
-<img width="550" height="481" alt="Capture12345" src="https://github.com/user-attachments/assets/7ec7261a-b40a-4cdc-8d90-c33dff2ad365" />
+<img width="612" height="729" alt="brute6" src="https://github.com/user-attachments/assets/b11c4e90-03df-4a5f-854b-e2ffe957fdfb" />
+<img width="612" height="748" alt="brute7" src="https://github.com/user-attachments/assets/b8f4b745-e1ba-46cc-8021-eaaccc6fca5b" />
+
 
 
 
