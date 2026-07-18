@@ -69,16 +69,20 @@ DeviceLogonEvents
 | summarize NumberOfFailures = count() by RemoteIP, ActionType, DeviceName
 | where NumberOfFailures >= 10
 ```
-![Screenshot 2025-01-13 182228](https://github.com/user-attachments/assets/d69ebc60-597d-4c13-8ef2-20b19b7a3778)
+<img width="718" height="336" alt="brute" src="https://github.com/user-attachments/assets/9a187a20-669c-4095-90f8-0ccc0ae36179" />
+
 
 
 - **Three Azure VMs** were targeted by brute force attempts from **three public IPs**:
   
   | **Remote IP**       | **Failed Attempts** | **Target Machine**    |
   |---------------------|---------------------|-----------------------|
-  | `87.120.127.241`    | 116                 | `linux-agent-scan-sam`    |
-  | `194.0.234.44`     | 100                 | `bennyvirtual`    |
-  | `10.0.0.8`    | 22, 20                 | `windows-server,ryan-final-lab `     |
+  | `89.18.136.94`    | 17                 | `corp-na03-ido2`    |
+  | `109.235.255.10`     | 13                 | `cgm-mde-test`    |
+  | `109.235.255.10`    | 13                 | `kingsvm `     |
+   | `223.112.111.2`    | 19                 | `windows-target-`    |
+  | `80.183.28.114`    | 33                 | `windows-target-`    |
+
 
 ![Screenshot 2025-01-06 181511](https://github.com/user-attachments/assets/3134d542-b44d-4036-b2ce-1827bc7dda88)
 
